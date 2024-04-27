@@ -1,15 +1,12 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../card/Card";
 import { useFavorites } from "../../context/FavoriteContext";
-
 const HomeSection = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const { addToFavorites } = useFavorites();
-
   useEffect(() => {
     const fetchNews = async () => {
       try {
