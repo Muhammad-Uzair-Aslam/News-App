@@ -9,8 +9,8 @@ const EntertainmentSection = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-            `https://gnews.io/api/v4/top-headlines?category=entertainment&apikey=${process.env.NEXT_PUBLIC_GNEWS_API_KEY}&lang=en&country=us`
-          );
+          `https://gnews.io/api/v4/top-headlines?category=entertainment&apikey=${process.env.NEXT_PUBLIC_GNEWS_API_KEY}&lang=en&country=us`
+        );
         setArticles(response.data.articles);
       } catch (error) {
         console.error("Error fetching news:", error);
@@ -26,7 +26,13 @@ const EntertainmentSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {articles.map((article, index) => (
           <div key={index}>
-            <Card alt={article.title} cardImage={article.image} description={article.description} heading={article.title} href={article.url}/>
+            <Card
+              alt={article.title}
+              cardImage={article.image}
+              description={article.description}
+              heading={article.title}
+              href={article.url}
+            />
           </div>
         ))}
       </div>
