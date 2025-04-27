@@ -24,7 +24,6 @@ const HomeSection = () => {
   }, []);
 
   if (loading) return <p className="text-white h-screen">Loading news...</p>;
-
   return (
     <div className="">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
