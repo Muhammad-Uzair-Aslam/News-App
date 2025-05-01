@@ -1,8 +1,14 @@
 import React from "react";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import Button from "../button/Button";
-
-export default function Card({ alt, cardImage, heading, description, href, FavoriteHandler }) {
+export default function Card({
+  alt,
+  cardImage,
+  heading,
+  description,
+  href,
+  FavoriteHandler,
+}) {
   return (
     <div className="rounded-2xl mx-auto md:mx-3 bg-gray-800 max-w-96 md:max-w-none">
       <div>
@@ -24,7 +30,11 @@ export default function Card({ alt, cardImage, heading, description, href, Favor
         <div className="pb-2 flex justify-between items-center mx-4">
           <Button href={href} />
           <button onClick={FavoriteHandler}>
-            <MdOutlineFavoriteBorder className="cursor-pointer" color="white" size={25} />
+            <MdOutlineFavoriteBorder
+              className="cursor-pointer"
+              color="white"
+              size={25}
+            />
           </button>
         </div>
       </div>
